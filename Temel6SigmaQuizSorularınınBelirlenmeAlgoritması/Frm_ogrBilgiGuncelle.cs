@@ -20,27 +20,65 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         }
         int adminID = 0;
 
-       // SqlConnection con = new SqlConnection("Data Source=LAPTOP-D3S9ESL2;Initial Catalog=birleştirmeDeneme2;Integrated Security=True");
-        string ad, soyad,telNo,email,sifre,ortalama,sinif,veliNo,ulasim,ogrenciDetay;
+        // SqlConnection con = new SqlConnection("Data Source=LAPTOP-D3S9ESL2;Initial Catalog=birleştirmeDeneme2;Integrated Security=True");
+        string ad, soyad, telNo, email, sifre, ortalama, sinif, veliNo, ulasim, ogrenciDetay;
+        int TogMove;
+        int MValX;
+        int MValY;
+        private void Frm_ogrBilgiGuncelle_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void Frm_ogrBilgiGuncelle_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void Frm_ogrBilgiGuncelle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
+
+        private void picture_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void picture_max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void pictureBox_min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void Frm_ogrBilgiGuncelle_Load(object sender, EventArgs e)
         {
-            if (sqlBaglantisi.baglanti().State==ConnectionState.Closed)
+            if (sqlBaglantisi.baglanti().State == ConnectionState.Closed)
             {
                 sqlBaglantisi.baglanti();
             }
-            if (sqlBaglantisi.baglanti().State==ConnectionState.Open)
+            if (sqlBaglantisi.baglanti().State == ConnectionState.Open)
             {
                 sqlBaglantisi.baglanti().Close();
             }
             textlabelvisible(false);
-           // MessageBox.Show("e posta:"+Form1.epostaStringi);//E Postamız bu
-        
+
             SqlCommand komutAdmin = new SqlCommand($"select * from tblAdmin where email='{Form1.epostaStringi}'", sqlBaglantisi.baglanti());
             SqlDataReader drAdmin;
             drAdmin = komutAdmin.ExecuteReader();
             while (drAdmin.Read())
-            {   
-                MessageBox.Show("Adi :"+drAdmin["ad"].ToString()+" soyadi:"+drAdmin["soyad"].ToString()+"admin idsi:"+drAdmin["AdminID"].ToString());
+            {
                 adminID = Convert.ToInt16(drAdmin["AdminID"]);
             }
             drAdmin.Close();
@@ -49,7 +87,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             SqlDataReader drOgrenci = komutOgrenci.ExecuteReader();
             while (drOgrenci.Read())
             {
-                cmb_ogrEmailSec.Items.Add(""+drOgrenci["email"].ToString());              
+                cmb_ogrEmailSec.Items.Add("" + drOgrenci["email"].ToString());
             }
             drOgrenci.Close();
 
@@ -64,25 +102,25 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         {
             // MessageBox.Show(cmb_ogrEmailSec.Text);
             textlabelvisible(true);
-          //  sqlBaglantisi.baglanti().Open();
+            //  sqlBaglantisi.baglanti().Open();
             SqlCommand ogrKomut = new SqlCommand($"select * from tblOgrenci where AdminID={adminID} and email='{cmb_ogrEmailSec.Text}'", sqlBaglantisi.baglanti());
-            SqlDataReader reader=ogrKomut.ExecuteReader();
+            SqlDataReader reader = ogrKomut.ExecuteReader();
             while (reader.Read())
             {
                 ad = reader["ad"].ToString();
-                soyad= reader["soyad"].ToString();
+                soyad = reader["soyad"].ToString();
                 telNo = reader["telefonNo"].ToString();
                 email = reader["email"].ToString();
                 sifre = reader["sifre"].ToString();
                 ortalama = reader["ortalama"].ToString();
                 sinif = reader["sinif"].ToString();
                 veliNo = reader["veliNo"].ToString();
-                ulasim= reader["ulasim"].ToString(); 
+                ulasim = reader["ulasim"].ToString();
                 ogrenciDetay = reader["ogrenciDetay"].ToString();
                 txt_guncelleAd.Text = ad;
                 txt_guncelleSoyad.Text = soyad;
                 txt_guncelleTelNo.Text = telNo;
-                txt_guncelleEposta .Text = email;
+                txt_guncelleEposta.Text = email;
                 txt_guncelleSifre.Text = sifre;
                 txt_guncelleOrtalama.Text = ortalama;
                 cmb_sinifGuncelle.Text = sinif;
@@ -95,7 +133,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             }
             sqlBaglantisi.baglanti().Close();
 
-          
+
         }
         void textlabelvisible(bool on)
         {
@@ -131,10 +169,11 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         {
 
             sqlBaglantisi.baglanti();
-         
-            updateOgrVerileri(txt_guncelleAd,"ad",ad);
+
+
+            updateOgrVerileri(txt_guncelleAd, "ad", ad);
             updateOgrVerileri(txt_guncelleSoyad, "soyad", soyad);
-            updateOgrVerileri(txt_guncelleTelNo,"telefonNo",telNo);
+            updateOgrVerileri(txt_guncelleTelNo, "telefonNo", telNo);
             updateOgrVerileri(txt_guncelleEposta, "email", email);
             updateOgrVerileri(txt_guncelleSifre, "sifre", sifre);
             updateOgrVerileri(txt_guncelleOrtalama, "ortalama", ortalama);
@@ -143,14 +182,14 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             ogrUpdateKomutSinif.ExecuteNonQuery();
             updateOgrVerileri(txt_guncelleTelNo, "veliNo", veliNo);
             updateOgrVerileri(txt_guncelleTelNo, "ulasim", ulasim);
-            updateOgrVerileri(txt_guncelleTelNo, "ogrenciDetay",ogrenciDetay);
+            updateOgrVerileri(txt_guncelleTelNo, "ogrenciDetay", ogrenciDetay);
 
 
             sqlBaglantisi.baglanti().Close();
             MessageBox.Show("guncellendi");
             this.Close();
         }
-        void updateOgrVerileri(BunifuMetroTextbox tx,string databasename,string dataReaderdenGelenVeri)
+        void updateOgrVerileri(BunifuMetroTextbox tx, string databasename, string dataReaderdenGelenVeri)
         {
             SqlCommand command = new SqlCommand($"update tblOgrenci set {databasename}='{tx.Text}' where {databasename}='{dataReaderdenGelenVeri}' ", sqlBaglantisi.baglanti());
             command.ExecuteNonQuery();

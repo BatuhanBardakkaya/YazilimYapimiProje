@@ -116,7 +116,45 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             txt_AdminGunlukSaat.Text = "";
             sqlBaglantisi.baglanti().Close();
         }
+        int TogMove;
+        int MValX;
+        int MValY;
+        private void Frm_AdminEkle_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
 
+        private void Frm_AdminEkle_MouseMove(object sender, MouseEventArgs e)
+        {
+           
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
 
+        private void Frm_AdminEkle_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void picture_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void picture_max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void pictureBox_min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -110,11 +110,23 @@
     <Compile Include="frm_AdminPanel.Designer.cs">
       <DependentUpon>frm_AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_eksikKonular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_eksikKonular.Designer.cs">
+      <DependentUpon>frm_eksikKonular.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_kayitOl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_kayitOl.Designer.cs">
       <DependentUpon>frm_kayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ogrAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ogrAyarlar.Designer.cs">
+      <DependentUpon>frm_ogrAyarlar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_ogrBilgiGuncelle.cs">
       <SubType>Form</SubType>
@@ -122,11 +134,35 @@
     <Compile Include="Frm_ogrBilgiGuncelle.Designer.cs">
       <DependentUpon>Frm_ogrBilgiGuncelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ogrPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ogrPanel.Designer.cs">
+      <DependentUpon>frm_ogrPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sinavaBasla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sinavaBasla.Designer.cs">
+      <DependentUpon>frm_sinavaBasla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Sorumlu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Sorumlu.Designer.cs">
+      <DependentUpon>frm_Sorumlu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_SorumluEkle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_SorumluEkle.Designer.cs">
       <DependentUpon>Frm_SorumluEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_soruOnayla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_soruOnayla.Designer.cs">
+      <DependentUpon>frm_soruOnayla.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,14 +179,32 @@
     <EmbeddedResource Include="frm_AdminPanel.resx">
       <DependentUpon>frm_AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_eksikKonular.resx">
+      <DependentUpon>frm_eksikKonular.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_kayitOl.resx">
       <DependentUpon>frm_kayitOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ogrAyarlar.resx">
+      <DependentUpon>frm_ogrAyarlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ogrBilgiGuncelle.resx">
       <DependentUpon>Frm_ogrBilgiGuncelle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ogrPanel.resx">
+      <DependentUpon>frm_ogrPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sinavaBasla.resx">
+      <DependentUpon>frm_sinavaBasla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Sorumlu.resx">
+      <DependentUpon>frm_Sorumlu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_SorumluEkle.resx">
       <DependentUpon>Frm_SorumluEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_soruOnayla.resx">
+      <DependentUpon>frm_soruOnayla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

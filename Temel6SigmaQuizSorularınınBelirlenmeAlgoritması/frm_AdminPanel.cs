@@ -48,5 +48,50 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             frm_OgrenciGuncelle.ShowDialog();
 
         }
+
+        private void btn_adminSoruOnayla_Click(object sender, EventArgs e)
+        {
+            frm_soruOnayla frm_SoruOnayla = new frm_soruOnayla();
+            frm_SoruOnayla.ShowDialog();
+        }
+
+        private void picture_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void picture_max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void pictureBox_min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        int TogMove;
+        int MValX;
+        int MValY;
+        private void frm_AdminPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void frm_AdminPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void frm_AdminPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
     }
 }
