@@ -107,7 +107,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             this.btn_girisYap.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(136)))));
             this.btn_girisYap.IdleForecolor = System.Drawing.Color.White;
             this.btn_girisYap.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_girisYap.Location = new System.Drawing.Point(37, 407);
+            this.btn_girisYap.Location = new System.Drawing.Point(40, 421);
             this.btn_girisYap.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btn_girisYap.Name = "btn_girisYap";
             this.btn_girisYap.Size = new System.Drawing.Size(518, 89);
@@ -134,8 +134,8 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             this.btn_kayıtOl.IdleFillColor = System.Drawing.Color.Gray;
             this.btn_kayıtOl.IdleForecolor = System.Drawing.Color.White;
             this.btn_kayıtOl.IdleLineColor = System.Drawing.Color.Gray;
-            this.btn_kayıtOl.Location = new System.Drawing.Point(364, 520);
-            this.btn_kayıtOl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_kayıtOl.Location = new System.Drawing.Point(367, 530);
+            this.btn_kayıtOl.Margin = new System.Windows.Forms.Padding(5);
             this.btn_kayıtOl.Name = "btn_kayıtOl";
             this.btn_kayıtOl.Size = new System.Drawing.Size(191, 67);
             this.btn_kayıtOl.TabIndex = 4;
@@ -160,8 +160,8 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             this.btn_sifreUnuttum.IdleFillColor = System.Drawing.Color.Gray;
             this.btn_sifreUnuttum.IdleForecolor = System.Drawing.Color.White;
             this.btn_sifreUnuttum.IdleLineColor = System.Drawing.Color.Gray;
-            this.btn_sifreUnuttum.Location = new System.Drawing.Point(40, 520);
-            this.btn_sifreUnuttum.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_sifreUnuttum.Location = new System.Drawing.Point(40, 530);
+            this.btn_sifreUnuttum.Margin = new System.Windows.Forms.Padding(5);
             this.btn_sifreUnuttum.Name = "btn_sifreUnuttum";
             this.btn_sifreUnuttum.Size = new System.Drawing.Size(196, 67);
             this.btn_sifreUnuttum.TabIndex = 3;
