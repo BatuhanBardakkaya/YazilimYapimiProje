@@ -26,14 +26,9 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 sqlBaglantisi.baglanti();
             if (sqlBaglantisi.baglanti().State == ConnectionState.Open)
                 sqlBaglantisi.baglanti().Close();
-            // TODO: This line of code loads data into the 'birleştirmeDeneme2DataSet4.tblAdmin' table. You can move, or remove it, as needed.
-            //this.tblAdminTableAdapter.Fill(this.birleştirmeDeneme2DataSet4.tblAdmin);
             tablodakiDegerleriOku();
-            //MessageBox.Show(Dtp_Admin.Value.ToString());
             Rb_AdminErkek.Checked = true;
             txt_AdminAd.Focus();
-            //MessageBox.Show(Dtp_Admin.Value.Month+"." + Dtp_Admin.Value.Day + "." + Dtp_Admin.Value.Year );
-            //MessageBox.Show("Dtp_Admin.Value.ToShortTimeString()"+ Dtp_Admin.Value.ToShortDateString());
         }
 
 
@@ -49,8 +44,6 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         }
         private void Btn_KayitEkleAdmin_Click(object sender, EventArgs e)
         {
-           
-
             SqlCommand kayitekle = new SqlCommand("insert into tblAdmin (ad,soyad,telefonNo,email,sifre,cinsiyet,iseBaslamaTarihi,maas,adres,calismaYili,yetkiSeviyesi,gunlukCalismaSaati) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9,@p10,@p11,@p12)", sqlBaglantisi.baglanti());
             bool adminKayitliMi = true;
             if (txt_AdminAd.Text!="" && txt_AdminSoyAd.Text != "" && txt_AdminTelNo.Text != "" && txt_AdminEposta.Text != "" && txt_AdminSifre.Text != "" &&
@@ -62,7 +55,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 {
                     if (read["email"].ToString() == txt_AdminEposta.Text)
                     {
-                        MessageBox.Show("böyle bir kayıt var.Tekrar deneyin.");
+                        MessageBox.Show("Böyle bir kayıt var.Tekrar Deneyin.");
                         adminKayitliMi = false;
                         break;
                     }
@@ -89,14 +82,14 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                     kayitekle.Parameters.AddWithValue("@p11", txt_AdminYetkiSev.Text);
                     kayitekle.Parameters.AddWithValue("@p12", txt_AdminGunlukSaat.Text);
                     kayitekle.ExecuteNonQuery();
-                    MessageBox.Show("Kayıt Eklendi");
+                    MessageBox.Show("Kayıt Eklendi.");
                     //return;
                 }
               
             }
             else
             {
-                MessageBox.Show("boş yerleri doldur");
+                MessageBox.Show("Boş Yerleri doldurunuz.");
             }
 
 

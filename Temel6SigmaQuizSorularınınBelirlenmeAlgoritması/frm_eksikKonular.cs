@@ -79,7 +79,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             }
             if (sa == 10)
             {
-                MessageBox.Show($"sorular Bitti... {sayac} Doğru {sa - sayac} Yanlış");
+                MessageBox.Show($"Sorular Bitti... {sayac} Doğru {sa - sayac} Yanlış");
                 this.Close();
             }
             dr.Close();

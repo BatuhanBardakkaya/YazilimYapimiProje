@@ -82,7 +82,6 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 adminID = Convert.ToInt16(drAdmin["AdminID"]);
             }
             drAdmin.Close();
-            /*--------------------------------------*/
             SqlCommand komutOgrenci = new SqlCommand($"select * from tblOgrenci where AdminID={adminID}", sqlBaglantisi.baglanti());
             SqlDataReader drOgrenci = komutOgrenci.ExecuteReader();
             while (drOgrenci.Read())
@@ -100,9 +99,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
 
         private void cmb_ogrEmailSec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // MessageBox.Show(cmb_ogrEmailSec.Text);
             textlabelvisible(true);
-            //  sqlBaglantisi.baglanti().Open();
             SqlCommand ogrKomut = new SqlCommand($"select * from tblOgrenci where AdminID={adminID} and email='{cmb_ogrEmailSec.Text}'", sqlBaglantisi.baglanti());
             SqlDataReader reader = ogrKomut.ExecuteReader();
             while (reader.Read())
@@ -186,7 +183,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
 
 
             sqlBaglantisi.baglanti().Close();
-            MessageBox.Show("guncellendi");
+            MessageBox.Show("Öğrenci Bilgileri Güncellendi.");
             this.Close();
         }
         void updateOgrVerileri(BunifuMetroTextbox tx, string databasename, string dataReaderdenGelenVeri)

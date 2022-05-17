@@ -32,12 +32,9 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         }
         private void btn_girisYap_Click(object sender, EventArgs e)
         {
-           // SqlConnection con = new SqlConnection("Data Source=LAPTOP-D3S9ESL2;Initial Catalog=birleştirmeDeneme2;Integrated Security=True");
-          
             SqlCommand komut;
             SqlDataReader dr;
             epostaStringi = txt_girisEposta.Text;
-           // MessageBox.Show("epostastringi:" + epostaStringi);
 
             if (radioButton1.Checked)
             {
@@ -45,13 +42,13 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 dr = komut.ExecuteReader();
                 if (dr.Read())//ogrenci
                 {
-                    MessageBox.Show("giris basarili: "+radioButton1.Text);
+                    MessageBox.Show("Giriş Başarılı: "+radioButton1.Text);
                     frm_ogrPanel frm_OgrPanel = new frm_ogrPanel();
                     frm_OgrPanel.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("başarısız");
+                    MessageBox.Show("Giriş Başarısız.Email yada şifre hatalıdır.");
                 }
                 dr.Close();
             }
@@ -61,17 +58,16 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 dr = komut.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("giris basarili:" + radioButton2.Text);
+                    MessageBox.Show("Giriş Başarılı:" + radioButton2.Text);
                     frm_AdminPanel frm_AdminPanel = new frm_AdminPanel();
                     frm_AdminPanel.ShowDialog();
-
                 }
                 else
                 {
-                    MessageBox.Show("başarısız");
+                    MessageBox.Show("Giriş Başarısız.Email yada şifre hatalıdır.");
+
                 }
                 dr.Close();
-                
             }
             if (radioButton3.Checked)//sorumlu
             {
@@ -79,22 +75,19 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 dr = komut.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("giris basarili:" + radioButton3.Text);
+                    MessageBox.Show("Giriş Başarılı:" + radioButton3.Text);
                     frm_Sorumlu frmSorumlu = new frm_Sorumlu();
                     frmSorumlu.Show();
-
                 }
                 else
                 {
-                    MessageBox.Show("başarısız");
+                    MessageBox.Show("Giriş Başarısız.Email yada şifre hatalıdır.");
+
                 }
 
                 dr.Close();
                
             }
-
-
-
 
             sqlBaglantisi.baglanti().Close();
         }

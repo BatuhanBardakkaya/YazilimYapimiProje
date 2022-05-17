@@ -194,6 +194,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_ogrPanel";
             this.Text = "frm_ogrPanel";
+            this.Load += new System.EventHandler(this.frm_ogrPanel_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frm_ogrPanel_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frm_ogrPanel_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frm_ogrPanel_MouseUp);

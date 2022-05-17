@@ -90,7 +90,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 {
                     if (read["email"].ToString() == txt_kayitOlEposta.Text)
                     {
-                        MessageBox.Show("böyle bir kayıt var.Tekrar deneyin.");
+                        MessageBox.Show("Böyle bir kayıt vardır.Lütfen Tekrar deneyiniz.");
                         epostaKayitliMi = false;
                         break;
                     }
@@ -125,7 +125,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                     komut.Parameters.AddWithValue("@SorumluID", sorumluID);
                     komut.ExecuteNonQuery();
 
-                    MessageBox.Show("kayıt eklendi");
+                    MessageBox.Show("Kayıt Eklendi.");
 
                     return;
 
@@ -136,7 +136,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             }
             else
             {
-                MessageBox.Show("boş yerleri doldurunuz.kayıt eklemenedi");
+                MessageBox.Show("Boş Yerleri Doldurunuz.Kayıt Eklenemedi");
             }
             #endregion
 

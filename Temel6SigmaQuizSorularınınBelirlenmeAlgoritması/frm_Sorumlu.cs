@@ -23,24 +23,6 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         {
             txt_soru.Focus();
             cmb_dogruSik.SelectedIndex = 0;
-            //SqlCommand kom = new SqlCommand("select soruresmi from tblSorular", sqlBaglantisi.baglanti());
-            //SqlDataReader dr = kom.ExecuteReader();
-            //if (dr.Read())
-            //{
-            //    if (dr["soruresmi"] != null)
-            //    {
-            //        byte[] ressim = new byte[0];
-            //        ressim = (byte[])(dr["soruresmi"]);
-            //        MemoryStream memoryStream = new MemoryStream(ressim);
-            //        pictureBox2.Image = Image.FromStream(memoryStream);
-            //        dr.Close();
-            //        kom.Dispose();
-            //        sqlBaglantisi.baglanti().Close();
-            //    }
-
-            //}
-           // sqlBaglantisi.baglanti().Close();
-
         }
 
        

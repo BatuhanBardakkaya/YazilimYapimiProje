@@ -29,28 +29,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             SqlDataReader dr = command.ExecuteReader();
             if (dr.Read())
             {
-
                 soruID = Convert.ToInt16(dr["soruID"]);
-                //MessageBox.Show("load kısmında soruID"+soruID);
-                //label1.Text = dr["soru"].ToString();
-                //label2.Text = dr["şıkA"].ToString();
-                //label3.Text = dr["şıkB"].ToString();
-                //label4.Text = dr["şıkC"].ToString();
-                //label5.Text = dr["şıkD"].ToString();
-                //label6.Text = dr["doğruŞık"].ToString();
-                //if (!Convert.IsDBNull(dr["soruresmi"]))
-                //{
-                //    byte[] ressim = new byte[0];
-                //    ressim = (byte[])(dr["soruresmi"]);
-                //    MemoryStream memoryStream = new MemoryStream(ressim);
-                //    pictureBox1.Image = Image.FromStream(memoryStream);
-
-                //    command.Dispose();
-                    // sqlBaglantisi.baglanti().Close();
-                //}
-
-
-
             }
             dr.Close();
         }
@@ -102,13 +81,12 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                         pictureBox1.Image = Image.FromStream(memoryStream);
 
                         commands.Dispose();
-                        // sqlBaglantisi.baglanti().Close();
                     }
                     else
                     {
                         pictureBox1.Image = null;
                     }
-                    commands.ExecuteNonQuery();//önmemli açmak gerek
+                    commands.ExecuteNonQuery();
                    
                 }
                

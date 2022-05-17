@@ -27,15 +27,10 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
         }
         private void Frm_SorumluEkle_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'birleştirmeDeneme2DataSet.tblSinavSorumlusu' table. You can move, or remove it, as needed.
             if (sqlBaglantisi.baglanti().State==ConnectionState.Closed)
-            {
                 sqlBaglantisi.baglanti();
-            }
             if (sqlBaglantisi.baglanti().State==ConnectionState.Open)
-            {
                 sqlBaglantisi.baglanti().Close();
-            }
             tablodakiDegerleriOku();
             Rb_SorumluErkek.Checked = true;
             Txt_SorumluAd.Focus();
@@ -88,14 +83,14 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                     kayitekle.Parameters.AddWithValue("@p11", Txt_SorumluCalismaYili.Text);
                     kayitekle.Parameters.AddWithValue("@p12", txt_SorumluGunlukSaat.Text);
                     kayitekle.ExecuteNonQuery();
-                    MessageBox.Show("Kayıt Eklendi");
+                    MessageBox.Show("Kayıt Eklendi.");
                     //return;
                 }
 
             }
             else
             {
-                MessageBox.Show("boş yerleri doldur");
+                MessageBox.Show("Lütfen Boş Yerleri Doldurunuz.");
             }
 
 

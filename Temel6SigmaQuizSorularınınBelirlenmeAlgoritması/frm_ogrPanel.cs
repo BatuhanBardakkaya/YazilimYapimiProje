@@ -73,5 +73,10 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
             }
         }
+
+        private void frm_ogrPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

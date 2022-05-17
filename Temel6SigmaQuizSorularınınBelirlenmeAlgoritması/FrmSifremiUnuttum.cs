@@ -137,7 +137,7 @@ namespace Temel6SigmaQuizSorularınınBelirlenmeAlgoritması
             }
             if (!kayitVarMi)
             {
-                MessageBox.Show("böyle kayıt yok");
+                MessageBox.Show("Böyle kayıt yok.Tekrar Deneyiniz.");
             }
             drr.Close();
         }
